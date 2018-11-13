@@ -13,11 +13,11 @@ This project aims to build a model that predicts the human activities such as Wa
 <br><br>
 The repository has 3 ipython notebook
 <br>
-1)[HAR_EDA.ipynb](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_EDA.ipynb): Data pre-processing and Exploratory Data Analysis
+1) [HAR_EDA.ipynb](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_EDA.ipynb): Data pre-processing and Exploratory Data Analysis
 <br>
-2)[HAR_PREDICTION_MODELS.ipynb](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_PREDICTION_MODELS.ipynb): Machine Learning models with featured data
+2) [HAR_PREDICTION_MODELS.ipynb](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_PREDICTION_MODELS.ipynb): Machine Learning models with featured data
 <br>
-3)[HAR_LSTM.ipynb](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_LSTM.ipynb): LSTM model on raw timeseries data
+3) [HAR_LSTM.ipynb](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_LSTM.ipynb): LSTM model on raw timeseries data
 <br><br>
 All the code is in python 3 <br>
 **DEPENDENCIES**
@@ -53,7 +53,7 @@ The dataset can be downloaded from
 https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones#
 <br><br>
 dataset is also included in the Repository with in the folder [UCI_HAR_Dataset](https://github.com/srvds/Human-Activity-Recognition/tree/master/UCI_HAR_Dataset)
-
+<br><br>
 Human Activity Recognition database is built from the recordings of 30 persons performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors(accelerometer and Gyroscope).
 **Activities**
 * Walking
