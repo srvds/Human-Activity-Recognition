@@ -72,28 +72,18 @@ Accelerometer measures the directional movement of a device but will not be able
 With an accelerometer you can either get a really "noisy" info output that is responsive, or you can get a "clean" output that's sluggish. But when you combine the 3-axis accelerometer with a 3-axis gyro, you get an output that is both clean and responsive in the same time.
 <br><br>
 ### Understanding the dataset
-<br>
 * Both sensors generate data in 3 Dimensional space over time. Hence the data captured are '3-axial linear acceleration'(_tAcc-XYZ_) from accelerometer and '3-axial angular velocity' (_tGyro-XYZ_) from Gyroscope with several variations.
-<br>
 * prefix 't' in those metrics denotes time.
-<br>
 * suffix 'XYZ' represents 3-axial signals in X , Y, and Z directions.
-<br>
 * The available data is pre-processed by applying noise filters and then sampled in fixed-width windows(sliding windows) of 2.56 seconds each with 50% overlap. ie., each window has 128 readings.
-<br>
 ### Featurization by Domain Expert
 * For each window a feature vector was obtained by calculating variables from the time and frequency domain. each datapoint represents a window with different readings.
-<br>
 * The accelertion signal was saperated into Body and Gravity acceleration signals(___tBodyAcc-XYZ___ and ___tGravityAcc-XYZ___) using some low pass filter with corner frequecy of 0.3Hz.
-<br>
 * After that, the body linear acceleration and angular velocity were derived in time to obtian _jerk signals_ (___tBodyAccJerk-XYZ___ and ___tBodyGyroJerk-XYZ___).
-<br>
 * The magnitude of these 3-dimensional signals were calculated using the Euclidian norm. This magnitudes are represented as features with names like _tBodyAccMag_, _tGravityAccMag_, _tBodyAccJerkMag_, _tBodyGyroMag_ and _tBodyGyroJerkMag_.
-<br>
 * Finally, We've got frequency domain signals from some of the available signals by applying a FFT (Fast Fourier Transform). These signals obtained were labeled with ___prefix 'f'___ just like original signals with ___prefix 't'___. These signals are labeled as ___fBodyAcc-XYZ___, ___fBodyGyroMag___ etc.,.
-<br>
 
-These are the signals that we got so far.(prefix t means time domain data, prefix f means frequency domain data)
+* These are the signals that we got so far.(prefix t means time domain data, prefix f means frequency domain data)
 	+ tBodyAcc-XYZ
 	+ tGravityAcc-XYZ
 	+ tBodyAccJerk-XYZ
