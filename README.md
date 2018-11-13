@@ -142,10 +142,7 @@ Some other vectors by taking the average of signals in a single window sample. T
 	- LAYING as __6__
     
 #### Train and test data were saperated
- - The readings from ___70%___ of the volunteers were taken as ___trianing data___ and remaining ___30%___ subjects recordings were taken for ___test data___
- 
-#### Data
-
+ - The readings from ___70%___ of the volunteers(21 people) were taken as ___trianing data___ and remaining ___30%___ volunteers recordings(9 people) were taken for ___test data___
 * All the data is present in 'UCI_HAR_dataset/' folder in present working directory.
      - Feature names are present in 'UCI_HAR_dataset/features.txt'
      - ___Train Data___
