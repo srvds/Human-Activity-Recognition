@@ -107,5 +107,5 @@ Readings are divided into a window of 2.56 seconds with 50% overlapping.
          - 'UCI_HAR_dataset/test/X_test.txt'
          - 'UCI_HAR_dataset/test/subject_test.txt'
          - 'UCI_HAR_dataset/test/y_test.txt'
-         
+ f        
 
