@@ -71,12 +71,12 @@ Accelerometer measures the directional movement of a device but will not be able
 <br>
 With an accelerometer you can either get a really "noisy" info output that is responsive, or you can get a "clean" output that's sluggish. But when you combine the 3-axis accelerometer with a 3-axis gyro, you get an output that is both clean and responsive in the same time.
 <br><br>
-### Understanding the dataset
+#### Understanding the dataset
 * Both sensors generate data in 3 Dimensional space over time. Hence the data captured are '3-axial linear acceleration'(_tAcc-XYZ_) from accelerometer and '3-axial angular velocity' (_tGyro-XYZ_) from Gyroscope with several variations.
 * prefix 't' in those metrics denotes time.
 * suffix 'XYZ' represents 3-axial signals in X , Y, and Z directions.
 * The available data is pre-processed by applying noise filters and then sampled in fixed-width windows(sliding windows) of 2.56 seconds each with 50% overlap. ie., each window has 128 readings.
-### Featurization by Domain Expert
+#### Featurization
 * For each window a feature vector was obtained by calculating variables from the time and frequency domain. each datapoint represents a window with different readings.
 * The accelertion signal was saperated into Body and Gravity acceleration signals(___tBodyAcc-XYZ___ and ___tGravityAcc-XYZ___) using some low pass filter with corner frequecy of 0.3Hz.
 * After that, the body linear acceleration and angular velocity were derived in time to obtian _jerk signals_ (___tBodyAccJerk-XYZ___ and ___tBodyGyroJerk-XYZ___).
@@ -131,7 +131,7 @@ Some other vectors by taking the average of signals in a single window sample. T
 	+ tBodyGyroJerkMean
 
 
-###  Y_Labels(Encoded)
+####  Y_Labels(Encoded)
 + In the dataset, Y_labels are represented as numbers from 1 to 6 as their identifiers.
 
 	- WALKING as __1__
@@ -141,10 +141,10 @@ Some other vectors by taking the average of signals in a single window sample. T
 	- STANDING as __5__
 	- LAYING as __6__
     
-## Train and test data were saperated
+#### Train and test data were saperated
  - The readings from ___70%___ of the volunteers were taken as ___trianing data___ and remaining ___30%___ subjects recordings were taken for ___test data___
  
-## Data
+#### Data
 
 * All the data is present in 'UCI_HAR_dataset/' folder in present working directory.
      - Feature names are present in 'UCI_HAR_dataset/features.txt'
@@ -157,7 +157,4 @@ Some other vectors by taking the average of signals in a single window sample. T
          - 'UCI_HAR_dataset/test/subject_test.txt'
          - 'UCI_HAR_dataset/test/y_test.txt'
          
-
-## Data Size :
-> 27 MB
 
