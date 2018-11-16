@@ -119,24 +119,21 @@ For detailed code of this section you can always check the [HAR_EDA Notebook](ht
 <br>
 if some class have too little or too large numbers of values compared to rest of the classes than the dataset is imbalanced.<br>
 **Plot-1**
-
+<br>
 <img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot1.png" height=500 width=700>
 <br><br>
 In this plot on the X-axis we have subjects(volunteers) 1 to 30. Each color represents an activity<br>
 On the y-axis we have amount of data for each activity by provided by each subject.<br>
-<br>
 **Plot-2**
 <br>
-
 <img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot2.png">
 <br><br>
 From plot1 and plot2 it is clear that dataset is almost balanced.<br>
 
-#### Check for ease of classification
-<br>
+#### Variable analysis
 **Plot-3**
 <br>
-''' python
+``` python
 sns.set_palette("Set1", desat=0.80)
 facetgrid = sns.FacetGrid(train, hue='ActivityName', size=6,aspect=2)
 facetgrid.map(sns.distplot,'tBodyAccMagmean', hist=False)\
@@ -149,7 +146,7 @@ plt.annotate("Moving Activities", xy=(0,3), xytext=(0.2, 9), size=20,\
             va='center', ha='left',\
             arrowprops=dict(arrowstyle="simple",connectionstyle="arc3,rad=0.1"))
 plt.show()
-'''
+```
 <br>
 <img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot3.png">
 
