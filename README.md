@@ -109,8 +109,13 @@ Readings are divided into a window of 2.56 seconds with 50% overlapping.
          - 'UCI_HAR_dataset/test/subject_test.txt'
          - 'UCI_HAR_dataset/test/y_test.txt'
  
- -------------------------------------------------------------------------------
- 
+-------------------------------------------------------------------------------
+Analysis
+--------
+
+For detailed code of this section you can always check the [HAR_EDA Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_EDA.ipynb)
+<br><br>
+
 
 #### Variable analysis
 **Plot-3**
