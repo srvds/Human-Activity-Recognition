@@ -111,13 +111,13 @@ Readings are divided into a window of 2.56 seconds with 50% overlapping.
  
  -------------------------------------------------------------------------------
  
- Analysis
- --------
- For detailed code of this section you can always check the [HAR_EDA Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_EDA.ipynb)
- <br><br>
- #### Check for Imbalanced class
- <br>
- if some class have too little or too large numbers of values compared to rest of the classes than the dataset is imbalanced.<br>
+Analysis
+--------
+For detailed code of this section you can always check the [HAR_EDA Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_EDA.ipynb)
+<br><br>
+#### Check for Imbalanced class
+<br>
+if some class have too little or too large numbers of values compared to rest of the classes than the dataset is imbalanced.<br>
 **Plot-1**
 
 <img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot1.png" height=500 width=700>
@@ -132,7 +132,25 @@ On the y-axis we have amount of data for each activity by provided by each subje
 <br><br>
 From plot1 and plot2 it is clear that dataset is almost balanced.<br>
 
-#### check for ease of classification
+#### Check for ease of classification
 <br>
 **Plot-3**
+<br>
+''' python
+sns.set_palette("Set1", desat=0.80)
+facetgrid = sns.FacetGrid(train, hue='ActivityName', size=6,aspect=2)
+facetgrid.map(sns.distplot,'tBodyAccMagmean', hist=False)\
+    .add_legend()
+plt.annotate("Stationary Activities", xy=(-0.956,17), xytext=(-0.9, 23), size=20,\
+            va='center', ha='left',\
+            arrowprops=dict(arrowstyle="simple",connectionstyle="arc3,rad=0.1"))
+
+plt.annotate("Moving Activities", xy=(0,3), xytext=(0.2, 9), size=20,\
+            va='center', ha='left',\
+            arrowprops=dict(arrowstyle="simple",connectionstyle="arc3,rad=0.1"))
+plt.show()
+'''
+<br>
 <img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot3.png">
+
+
