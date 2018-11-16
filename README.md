@@ -114,10 +114,20 @@ Analysis
 --------
 
 For detailed code of this section you can always check the [HAR_EDA Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_EDA.ipynb)
-<br><br>
-#### Check for Imbalanced class
 <br>
-
+#### Check for Imbalanced class<br>
+if some class have too little or too large numbers of values compared to rest of the classes than the dataset is imbalanced.<br>
+**Plot-1**
+<br>
+<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot1.png" height=500 width=700>
+<br><br>
+In this plot on the X-axis we have subjects(volunteers) 1 to 30. Each color represents an activity<br>
+On the y-axis we have amount of data for each activity by provided by each subject.<br>
+**Plot-2**
+<br>
+<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot2.png">
+<br><br>
+From plot1 and plot2 it is clear that dataset is almost balanced.<br>
 #### Variable analysis
 **Plot-3**
 <br>
