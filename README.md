@@ -115,7 +115,8 @@ Analysis
 
 For detailed code of this section you can always check the [HAR_EDA Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_EDA.ipynb)
 <br><br>
-
+#### Check for Imbalanced class
+<br>
 
 #### Variable analysis
 **Plot-3**
