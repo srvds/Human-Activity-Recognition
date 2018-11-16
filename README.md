@@ -147,5 +147,20 @@ plt.show()
 ```
 <br>
 <img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot3.png">
+The above plot is of tBodyAccMagmean which is mean values of magnitude of acceleration in time space. <br>
 
-
+**Plot-4**
+Box plot mean of magnitude of an acceleration
+<br>
+``` python
+plt.figure(figsize=(7,7))
+sns.boxplot(x='ActivityName', y='tBodyAccMagmean',data=train, showfliers=False, saturation=1)
+plt.ylabel('Acceleration Magnitude mean')
+plt.axhline(y=-0.7, xmin=0.1, xmax=0.9,dashes=(5,5), c='g')
+plt.axhline(y=-0.05, xmin=0.4, dashes=(5,5), c='m')
+plt.xticks(rotation=90)
+plt.show()
+```
+<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot4.png">
+<br>
+From plot-3 and plot-4 we can see that stationary activities can be linearly separated from activities with motion.
