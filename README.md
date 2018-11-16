@@ -93,42 +93,24 @@ Readings are divided into a window of 2.56 seconds with 50% overlapping.
 
 * We get a feature vector of 561 features and these features are given in the dataset.
 
-* Each window of readings is a datapoint of 561 features,and we have 10299 window readings.
+* Each window of readings is a datapoint of 561 features,and we have 10299 readings.
 
 * These are the signals that we got so far.(prefix t means time domain data, prefix f means frequency domain data)
 #### Train and test data were saperated
  - The readings from ___70%___ of the volunteers(21 people) were taken as ___trianing data___ and remaining ___30%___ volunteers recordings(9 people) were taken for ___test data___
 * All the data is present in 'UCI_HAR_dataset/' folder in present working directory.
      - Feature names are present in 'UCI_HAR_dataset/features.txt'
-     - ___Train Data___ (7352 window readings)
+     - ___Train Data___ (7352 readings)
          - 'UCI_HAR_dataset/train/X_train.txt'
          - 'UCI_HAR_dataset/train/subject_train.txt'
          - 'UCI_HAR_dataset/train/y_train.txt'
-     - ___Test Data___ (2947 2947 window readinds)
+     - ___Test Data___ (2947 readinds)
          - 'UCI_HAR_dataset/test/X_test.txt'
          - 'UCI_HAR_dataset/test/subject_test.txt'
          - 'UCI_HAR_dataset/test/y_test.txt'
  
  -------------------------------------------------------------------------------
  
-Analysis
---------
-For detailed code of this section you can always check the [HAR_EDA Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_EDA.ipynb)
-<br><br>
-#### Check for Imbalanced class
-<br>
-if some class have too little or too large numbers of values compared to rest of the classes than the dataset is imbalanced.<br>
-**Plot-1**
-<br>
-<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot1.png" height=500 width=700>
-<br><br>
-In this plot on the X-axis we have subjects(volunteers) 1 to 30. Each color represents an activity<br>
-On the y-axis we have amount of data for each activity by provided by each subject.<br>
-**Plot-2**
-<br>
-<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot2.png">
-<br><br>
-From plot1 and plot2 it is clear that dataset is almost balanced.<br>
 
 #### Variable analysis
 **Plot-3**
