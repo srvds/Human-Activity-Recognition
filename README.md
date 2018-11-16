@@ -35,7 +35,7 @@ All the code is in python 3 <br>
 Introduction:
 -------------
 
-Every modern Smart Phone has a number of [sensors](https://www.gsmarena.com/glossary.php3?term=sensors).we are interested in two of the sensors Accelerometer and Gyroscope.
+Every modern Smart Phone has a number of [sensors](https://www.gsmarena.com/glossary.php3?term=sensors). we are interested in two of the sensors Accelerometer and Gyroscope.
 <br>
 The data is recorded with the help of sensors
 <br>
@@ -117,14 +117,16 @@ Readings are divided into a window of 2.56 seconds with 50% overlapping.
  #### Check for Imbalanced class
  <br>
  if some class have too little or too large numbers of values compared to rest of the classes than the dataset is imbalanced.
- **Plot 1** <br>
+ **Plot-1**
+
  
 <img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot1.png" height=500 width=700>
 <br><br>
 In this plot on the X-axis we have subjects(volunteers) 1 to 30. Each color represents an activity<br>
 on the y-axis we have amount of data for each activity by provided by each subject.<br>
 <br>
-**Plot 2** <br>
+**Plot-2**
+<br>
 
 <img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot2.png">
 <br><br>
@@ -132,4 +134,5 @@ From plot1 and plot2 it is clear that dataset is almost balanced.<br>
 
 #### check for ease of classification
 <br>
-<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot3.png"
+**Plot-3**
+<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot3.png">
