@@ -382,7 +382,16 @@ Confusion Matrix
 |WALKING_DOWNSTAIRS  |     0   |     0   |     0   |     1       |          418    |   1|
 |WALKING_UPSTAIRS    |     0   |     2    |    0    |    15         |         33    |   421|
 
+------------------------------------------------------------------------------------------------
 
+References:
+-----------
 
+https://en.wikipedia.org/wiki/Gyroscope
+https://scikit-learn.org/stable/supervised_learning.html#supervised-learning
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+https://keras.io/getting-started/sequential-model-guide/
+https://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/
+https://appliedaicourse.com
 
 
