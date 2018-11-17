@@ -228,16 +228,18 @@ Normalized confusion matrix for Linear SVC Model
 In this model also the diagonal elements, we have value 1 for rows corresponding to 'Laying' and 'Walking'.<br>
 Again row corresponding to 'sitting' has value of only 0.87. In the row 2nd row and 3rd column we have value 0.12 which basically means about 12% readings of the class sitting is misclassified as standing.<br>
 <br>
-It is not a surprise as in the t-sne plot (plot-5) we saw that 'sitting' and 'Standing' readings are overlapping.
+It is not a surprise as in the t-sne plot (plot-5) we saw that 'sitting' and 'Standing' class readings are overlapping.
 
 For detailed code of all the ML models check the [HAR_PREDICTION_MODELS Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_PREDICTION_MODELS.ipynb)
 
 #### LSTM Model
 
-keras with tensorflow backend is used.
+keras with tensorflow backend is used.<br>
+LSTM models need large amount of data to train properly, we also need to be cautious not to overfit.<br>
+We don't want to reduce the data available to train the model hence the test dataset is used as validation data.
 
-**LSTM model 1**
 
+Initialization of some of the parameters
 ``` python
 timesteps = len(X_train[0])
 input_dim = len(X_train[0][0])
@@ -252,5 +254,66 @@ print(len(X_train))
 9
 7352
 ```
+
+**LSTM model 1**
+
+Single LSTM model
+
+``` python
+
+# Initiliazing the sequential model
+model = Sequential()
+# Configuring the parameters
+model.add(LSTM(n_hidden, input_shape=(timesteps, input_dim)))
+# Adding Batchnormalization
+model.add(BatchNormalization())
+# Adding a dropout layer
+model.add(Dropout(pv))
+# Adding a dense output layer with sigmoid activation
+model.add(Dense(n_classes, activation='sigmoid'))
+model.summary()
+```
+``` python
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_30 (LSTM)               (None, 128)               70656     
+_________________________________________________________________
+batch_normalization_10 (Batc (None, 128)               512       
+_________________________________________________________________
+dropout_29 (Dropout)         (None, 128)               0         
+_________________________________________________________________
+dense_25 (Dense)             (None, 6)                 774       
+=================================================================
+Total params: 71,942
+Trainable params: 71,686
+Non-trainable params: 256
+_________________________________________________________________
+```
+
+LSTM models require large amount of compute power.
+The following parameters are selected after some experimental runs to get a good accuracy.
+
+``` python
+epochs = 30
+batch_size = 32
+n_hidden = 128
+pv = 0.25 # keep probability of dropout layer
+```
+
+With a simple LSTM architecture we got 93.75% accuracy and a loss of 0.22
+
+|Pred /True           |    LAYING | SITTING | STANDING | WALKING | WALKING_DOWNSTAIRS |  WALKING_UPSTAIRS |
+|---|---|---|---|---|---|---|
+|LAYING          |       537   |    0    |     0   |     0        |          0    |    0|
+|SITTING         |         5   |  390    |    93   |     0        |           0     |    3|
+|STANDING        |         0   |    96    |   436  |      0       |            0   |     0|
+|WALKING          |        0    |    1    |     0   |   473        |          10    |   12|
+|WALKING_DOWNSTAIRS  |     0   |     0   |     0   |     0       |          420    |   0|
+|WALKING_UPSTAIRS    |     0   |     0    |    0    |    0         |          1    |   470|
+
+ 
+
+
 For detailed code of this section you can always check the [HAR_LSTM Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_LSTM.ipynb)
 
