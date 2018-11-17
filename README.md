@@ -180,8 +180,8 @@ Sitting and standing are overlapped while other 4 classes can be separated well.
 Models
 ------
 
-For detailed code of this section you can always check the [HAR_PREDICTION_MODELS Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_PREDICTION_MODELS.ipynb)
-<br><br>
+#### Machine Learning Algorithms
+
 scikit-learn is used for all the 6 alogorithms listed below.<br>
 Hyperparameters of all models are tuned by grid search CV<br>
 Models fitted:<br>
@@ -192,7 +192,7 @@ Models fitted:<br>
 - Random Forest 
 - Gradient Boosted DT
 
-#### Machine Learning models Comparisions
+#### Models Comparisions
 |  model  | Accuracy |  Error|
 |---|---|---|
 | Logistic Regression |  96.27% | 3.733% |
@@ -209,7 +209,48 @@ Models fitted:<br>
 
 **Plot-6**
 
-confusion matrix for Linear Regression Model
+Normalized confusion matrix for Linear Regression Model
 
-<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot6.png">
- 
+<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot7.png">
+
+Diagonal Value of 1 means 100% accuracy for that class, and 0 means 0% accuracy.<br>
+considering the diagonal elements we have value 1 for rows corresponding to 'Laying' and 'Walking'.<br>
+while 'sitting' has value of only 0.87. In the row 2nd row and 3rd column we have value 0.12 which basically means about 12% readings of the class sitting is misclassified as standing.
+
+**Linear SVC**
+
+**Plot-7**
+
+Normalized confusion matrix for Linear SVC Model
+
+<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot8.png">
+
+In this model also the diagonal elements, we have value 1 for rows corresponding to 'Laying' and 'Walking'.<br>
+Again row corresponding to 'sitting' has value of only 0.87. In the row 2nd row and 3rd column we have value 0.12 which basically means about 12% readings of the class sitting is misclassified as standing.<br>
+<br>
+It is not a surprise as in the t-sne plot (plot-5) we saw that 'sitting' and 'Standing' readings are overlapping.
+
+For detailed code of all the ML models check the [HAR_PREDICTION_MODELS Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_PREDICTION_MODELS.ipynb)
+
+#### LSTM Model
+
+keras with tensorflow backend is used.
+
+**LSTM model 1**
+
+``` python
+timesteps = len(X_train[0])
+input_dim = len(X_train[0][0])
+n_classes = _count_classes(Y_train)
+
+print(timesteps)
+print(input_dim)
+print(len(X_train))
+```
+```
+128
+9
+7352
+```
+For detailed code of this section you can always check the [HAR_LSTM Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_LSTM.ipynb)
+
