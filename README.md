@@ -202,10 +202,14 @@ Models fitted:<br>
 |Random Forest |      91.31%    |  8.687% |
 |Gradient Boosted DT | 91.31%    |  8.687% |
 
-<br>
-Observing the Top 2 models :<br>
- > Logistic Regression
- **Plot-6**
- <br>confusion matrix
- <img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot6.png">
+
+> **Observing the Top 2 Models**
+
+**Logistic Regression**
+
+**Plot-6**
+
+confusion matrix for Linear Regression Model
+
+<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot6.png">
  
