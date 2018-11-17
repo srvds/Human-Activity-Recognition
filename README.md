@@ -190,3 +190,17 @@ Models tried:<br>
 - Random Forest 
 - Gradient Boosted DT
 
+#### Machine Learning models Comparisions
+<br>
+|  model  | Accuracy |  Error|
+|---|---|---|
+| Logistic Regression |  96.27% | 3.733% |
+| Linear SVC | 96.61% |  3.393% |
+|rbf SVM classifier  | 96.27%    |  3.733% |
+|Decision Tree  |       86.43%   |   13.57% |
+|Random Forest |      91.31%    |  8.687% |
+|Gradient Boosted DT | 91.31%    |  8.687% |
+
+<br>
+observing the confusion matrices of Top 2 models :<br>
+>LInear SVC
