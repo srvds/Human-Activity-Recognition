@@ -182,7 +182,9 @@ Models
 
 For detailed code of this section you can always check the [HAR_PREDICTION_MODELS Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_PREDICTION_MODELS.ipynb)
 <br><br>
-Models tried:<br>
+scikit-learn is used for all the 6 alogorithms listed below.<br>
+Hyperparameters of all models are tuned by grid search CV<br>
+Models fitted:<br>
 - Logistic Regression
 - Linear Support Vector Classifier(SVC)
 - Radial Basis Function (RBF) kernel SVM classifier 
@@ -191,7 +193,6 @@ Models tried:<br>
 - Gradient Boosted DT
 
 #### Machine Learning models Comparisions
-<br>
 |  model  | Accuracy |  Error|
 |---|---|---|
 | Logistic Regression |  96.27% | 3.733% |
@@ -202,5 +203,9 @@ Models tried:<br>
 |Gradient Boosted DT | 91.31%    |  8.687% |
 
 <br>
-observing the confusion matrices of Top 2 models :<br>
->LInear SVC
+Observing the Top 2 models :<br>
+ > Logistic Regression
+ **Plot-6**
+ <br>confusion matrix
+ <img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot6.png">
+ 
