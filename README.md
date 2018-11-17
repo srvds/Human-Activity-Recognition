@@ -234,10 +234,13 @@ For detailed code of all the ML models check the [HAR_PREDICTION_MODELS Notebook
 
 #### LSTM Model
 
+For detailed code of this section you can always check the [HAR_LSTM Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_LSTM.ipynb)
+
 keras with tensorflow backend is used.<br>
 LSTM models need large amount of data to train properly, we also need to be cautious not to overfit.<br>
-We don't want to reduce the data available to train the model hence the test dataset is used as validation data.
-
+> The raw series data is used to train the LSTM models, and not the heavily featured data.
+We don't want to reduce the data available to train the model hence the test dataset is used as validation data.<br>
+dropout Layers used to keep overfitting in check. 
 
 Initialization of some of the parameters
 ``` python
@@ -257,7 +260,7 @@ print(len(X_train))
 
 **LSTM model 1**
 
-Single LSTM model
+This is a single LSTM(128) model
 
 ``` python
 
@@ -301,7 +304,9 @@ n_hidden = 128
 pv = 0.25 # keep probability of dropout layer
 ```
 
-With a simple LSTM architecture we got 93.75% accuracy and a loss of 0.22
+With this simple LSTM(128) architecture we got 93.75% accuracy and a loss of 0.22
+<br>
+Confusion Matrix
 
 |Pred /True           |    LAYING | SITTING | STANDING | WALKING | WALKING_DOWNSTAIRS |  WALKING_UPSTAIRS |
 |---|---|---|---|---|---|---|
@@ -312,8 +317,72 @@ With a simple LSTM architecture we got 93.75% accuracy and a loss of 0.22
 |WALKING_DOWNSTAIRS  |     0   |     0   |     0   |     0       |          420    |   0|
 |WALKING_UPSTAIRS    |     0   |     0    |    0    |    0         |          1    |   470|
 
- 
+**LSTM model 2**
+
+This model has 2 LSTM layers
+LSTM(128) and LSTM(64) stacked.
+
+``` python
+
+# Initiliazing the sequential model
+model1 = Sequential()
+# Configuring the parameters
+model1.add(LSTM(n_hidden1, return_sequences=True, input_shape=(timesteps, input_dim)))
+# Adding a dropout layer
+model1.add(Dropout(pv1))
+
+model1.add(LSTM(n_hidden2))
+# Adding a dropout layer
+model1.add(Dropout(pv2))
+# Adding a dense output layer with sigmoid activation
+model1.add(Dense(n_classes, activation='sigmoid'))
+model1.summary()
+```
+``` python
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_28 (LSTM)               (None, 128, 128)          70656     
+_________________________________________________________________
+dropout_27 (Dropout)         (None, 128, 128)          0         
+_________________________________________________________________
+lstm_29 (LSTM)               (None, 64)                49408     
+_________________________________________________________________
+dropout_28 (Dropout)         (None, 64)                0         
+_________________________________________________________________
+dense_24 (Dense)             (None, 6)                 390       
+=================================================================
+Total params: 120,454
+Trainable params: 120,454
+Non-trainable params: 0
+_________________________________________________________________
+```
+
+The following parameters are selected after some experimental runs to get a good accuracy.
+
+``` python
+epochs1 = 30
+batch_size1= 32
+n_hidden1 = 128
+n_hidden2 =64
+pv1 = 0.2
+pv2 = 0.5
+```
+
+With this simple LSTM architecture we got 93.17% accuracy and a loss of 0.28
+<br>
+Confusion Matrix
+
+|Pred /True           |    LAYING | SITTING | STANDING | WALKING | WALKING_DOWNSTAIRS |  WALKING_UPSTAIRS |
+|---|---|---|---|---|---|---|
+|LAYING          |       510   |    0    |     1   |     0        |          0    |    26|
+|SITTING         |         0   |  402    |    86   |     1        |           0     |    2|
+|STANDING        |         0   |    76    |   454  |      1       |            0   |     1|
+|WALKING          |        0    |    0    |     0   |   468        |          25    |   3|
+|WALKING_DOWNSTAIRS  |     0   |     0   |     0   |     1       |          418    |   1|
+|WALKING_UPSTAIRS    |     0   |     2    |    0    |    15         |         33    |   421|
 
 
-For detailed code of this section you can always check the [HAR_LSTM Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_LSTM.ipynb)
+
+
 
