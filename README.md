@@ -19,7 +19,7 @@ The repository has 3 ipython notebook
 <br>
 3 [HAR_LSTM.ipynb](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_LSTM.ipynb) : LSTM model on raw timeseries data
 <br><br>
-All the code is in python 3 <br>
+All the code is written in python 3 <br><br>
 **DEPENDENCIES**
 * tensorflow
 * keras
@@ -110,6 +110,7 @@ Readings are divided into a window of 2.56 seconds with 50% overlapping.
          - 'UCI_HAR_dataset/test/y_test.txt'
  
 -------------------------------------------------------------------------------
+
 Analysis
 --------
 
@@ -150,7 +151,7 @@ plt.show()
 The above plot is of tBodyAccMagmean which is mean values of magnitude of acceleration in time space. <br>
 
 **Plot-4**
-Box plot mean of magnitude of an acceleration
+<br>Box plot, mean of magnitude of an acceleration
 <br>
 ``` python
 plt.figure(figsize=(7,7))
@@ -164,3 +165,28 @@ plt.show()
 <img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/plots/plot4.png">
 <br>
 From plot-3 and plot-4 we can see that stationary activities can be linearly separated from activities with motion.
+<br>
+
+**Plot-5**
+<br>
+Dimensionality reduction using T-distributed Stochastic Neighbor Embedding (t-SNE) to visualize 561 dimension dataset.
+<br>
+<img src="https://github.com/srvds/Human-Activity-Recognition/blob/master/t-sne_perp_50_iter_1000.png" width="600">
+<br>
+Sitting and standing are overlapped while other 4 classes can be separated well.
+
+------------------------------------------------------------------------------------
+
+Models
+------
+
+For detailed code of this section you can always check the [HAR_PREDICTION_MODELS Notebook](https://github.com/srvds/Human-Activity-Recognition/blob/master/HAR_PREDICTION_MODELS.ipynb)
+<br><br>
+Models tried:<br>
+- Logistic Regression
+- Linear Support Vector Classifier(SVC)
+- Radial Basis Function (RBF) kernel SVM classifier 
+- Decision Tree 
+- Random Forest 
+- Gradient Boosted DT
+
