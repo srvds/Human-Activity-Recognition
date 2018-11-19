@@ -386,12 +386,12 @@ Confusion Matrix
 
 References:
 -----------
-
+<p float="left">
 https://en.wikipedia.org/wiki/Gyroscope
 https://scikit-learn.org/stable/supervised_learning.html#supervised-learning
 http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 https://keras.io/getting-started/sequential-model-guide/
 https://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/
 https://appliedaicourse.com
-
+</p>
 
