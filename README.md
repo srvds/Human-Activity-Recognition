@@ -28,7 +28,7 @@ All the code is written in python 3 <br><br>
 * matplotlib
 * seaborn
 * sklearn
-* itertolls
+* itertools
 * datetime
 
 
